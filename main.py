@@ -22,18 +22,7 @@ st.header("Enter Student Data")
 # User inputs for numerical columns
 numerical_inputs = {}
 for col in numerical_cols:
-    if col in ['absence_days', 'weekly_self_study_hours']:
-        numerical_inputs[col] = st.number_input(
-            f"Enter {col.replace('_', ' ').capitalize()}",
-            value=0,
-            step=1,
-            format="%d"
-        )
-    else:
-        numerical_inputs[col] = st.number_input(
-            f"Enter {col.replace('_', ' ').capitalize()}",
-            value=0.0
-        )
+    numerical_inputs[col] = st.number_input(f"Enter {col.replace('_', ' ').capitalize()}", value=0.0)
 
 # User inputs for categorical columns
 gender = st.radio("Gender", ['Female', 'Male'])
